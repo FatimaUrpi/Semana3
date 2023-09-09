@@ -67,6 +67,8 @@
 <script type="text/javascript">
 
 $.getJSON("listaDeporte", {}, function(data){
+	/*PARA*/
+	console.log(data)
 	$.each(data, function(index,item){
 		$("#id_deporte").append("<option value="+item.idDeporte +">"+ item.nombre +"</option>");
 	});
@@ -119,10 +121,16 @@ $('#id_form').bootstrapValidator({
                     message: 'El nombre es un campo obligatorio'
                 },
                 stringLength :{
-                	message:'El nombre es de 5 a 100 caracteres',
-                	min : 5,
+                	message:'El nombre es de 3 a 100 caracteres',
+                	min : 3,
                 	max : 100
-                }
+                },
+                remote :{
+                	/*Tiempo de demora*/
+            	    delay: 1000,
+            	 	url: 'buscaPorNombreModalidad',
+            	 	message: 'El Nombre ya existe'
+             	}
             }
         },
         numHombres: {

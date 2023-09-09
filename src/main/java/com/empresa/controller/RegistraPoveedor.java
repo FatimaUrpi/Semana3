@@ -16,12 +16,14 @@ import com.empresa.entity.Modalidad;
 import com.empresa.service.DeporteService;
 import com.empresa.service.ModalidadService;
 
+
 @Controller
-public class RegistraModalidadController {
+
+public class RegistraPoveedor {
 
 	
 	
-	
+
 	@Autowired
 	private DeporteService deporteService;
 	
@@ -67,13 +69,4 @@ public class RegistraModalidadController {
 		}
 	}
 	
-	
-	
 }
-
-
-
-
-
-
-
