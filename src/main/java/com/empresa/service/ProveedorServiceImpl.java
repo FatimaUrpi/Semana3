@@ -1,24 +1,30 @@
 package com.empresa.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.empresa.entity.Alumno;
-import com.empresa.repository.AlumnoRepository;
-
+import com.empresa.entity.Proveedor;
+import com.empresa.repository.ProveedorRepository;
 
 @Service
+public class ProveedorServiceImpl implements ProveedorService{
 
-public class ProveedorServiceImpl {
-
-	
 	
 	@Autowired
-	private AlumnoRepository repository;
-
+	private ProveedorRepository repository;
+	
 	@Override
-	public Alumno insertaProveedor(Proveedor obj) {
+	public Proveedor insertaProveedor(Proveedor obj) {
 		return repository.save(obj);
 	}
-
+	@Override
+	public List<Proveedor> listaPorNombre(String nombre) {
+		return repository.findByNombreIgnoreCase(nombre);
+	}
+		@Override
+		public List<Proveedor> listaPorDni(String dni) {
+			return repository.findByDniIgnoreCase(dni);
+	}
 }

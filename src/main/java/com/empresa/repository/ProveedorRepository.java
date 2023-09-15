@@ -7,16 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.empresa.entity.Proveedor;
 
 public interface ProveedorRepository extends JpaRepository<Proveedor, Integer>{
-
-	
-	
-	
-/*	public List<Modalidad> findByNombre(String nombre);*/
-	
-	
-	/*busca en la bd el nombre usa se ingresa en el campo de entrada*/
+	/*Buscar por nombre ignorando las mayuscula y miniscula*/
 	public List<Proveedor> findByNombreIgnoreCase(String nombre);
-	public List<Proveedor> findByNombreIgnoreCase(String dni);
 
+	public List<Proveedor> findByDniIgnoreCase(String dni);
 
 }
